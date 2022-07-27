@@ -6,11 +6,20 @@ const CreditCardForm = () => {
   const paymentHandler = async (e) => {
     e.preventDefault();
     if (!stripe || !elements) return;
+    const response = await fetch("/.netlify/functions/create-payment-intent", {
+      method: "Post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ amount: 1000 }),
+    }).then((res) => res.json());
+    console.log(response);
   };
+
   return (
     <div className="m-5 md:w-8/12 md:m-auto pb-20">
       <h2 className="mt-5 text-xl font-bold">Credit Card Payment:</h2>
-      <form className="mt-4">
+      <form className="mt-4" onSubmit={paymentHandler}>
         <CardElement />
 
         <div className="flex justify-end mt-7 ">

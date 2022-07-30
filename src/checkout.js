@@ -11,20 +11,20 @@ const Checkout = () => {
       {" "}
       {Object.keys(cartItems).length > 0 ? (
         <>
-          <table className="grid mx-2 md:w-11/12 md:m-auto items-center w-full ">
+          <table className="w-[95vw] m-auto md:w-11/12 md:m-auto">
             <thead>
-              <tr className="grid grid-cols-5 mt-5 w-full border-b-gray-600 border-b-[1.5px] pb-2">
+              <tr className="mt-5 justify-around border-b-gray-600 border-b-[1.5px] pb-2">
                 <th>Product</th>
                 <th>Description</th>
                 <th>Quantity</th>
                 <th>Price</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="">
               {cartItems.map((item) => (
                 <CheckoutCard key={item.id} cartItem={item} />
               ))}
-              <tr className="flex w-11/12 justify-end">
+              <tr className="flex mt-5 md:ml-3">
                 <td>
                   <h2 className="text-xl">
                     Total: <span className="font-semibold">${cartTotal} </span>

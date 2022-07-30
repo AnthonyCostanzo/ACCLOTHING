@@ -16,12 +16,12 @@ const CheckoutCard = ({ cartItem }) => {
   };
 
   return (
-    <tr className="grid grid-cols-5 my-5 w-full text-center items-center">
+    <tr className="text-center">
       {cartItem.quantity > 0 && (
         <>
-          <td className="md:h-52">
+          <td className="h-32 flex justify-center my-5">
             <img
-              className="h-full w-full rounded-sm shadow-md shadow-gray-500"
+              className="h-full md:w-8/12 rounded-sm shadow-md shadow-gray-500"
               alt="yeezy"
               src={cartItem.imageUrl}
             />
